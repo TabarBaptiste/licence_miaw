@@ -121,6 +121,7 @@ input[type="reset"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 input[type="reset"] {
     background-color: #db3434;
     color: white;
@@ -130,6 +131,7 @@ input[type="reset"] {
     cursor: pointer;
     margin-bottom: 2%;
 }
+
 input[type="reset"]:hover {
     background-color: #b92929;
 }
@@ -239,3 +241,22 @@ textarea {
 .tdd[colspan]+.tdd {
     border-left: none;
 }
+/*
+#togglePassword {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#togglePassword:hover {
+    background-color: #0056b3;
+}
+
+#passwordInput {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}*/

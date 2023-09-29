@@ -202,9 +202,11 @@
                         <li>Mot de passe :</li>
                     </td>
                     <td>
-                        <input type="password" name="password">
+                        <input type="password" name="password" id="passwordInput">
+                        <!--<button type="button" id="togglePassword">Afficher le mot de passe</button>-->
                     </td>
                 </tr>
+
 
             </ul>
         </table>
@@ -245,3 +247,19 @@
 </body>
 
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.getElementById('passwordInput');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', function() {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePassword.textContent = 'Masquer le mot de passe';
+            } else {
+                passwordInput.type = 'password';
+                togglePassword.textContent = 'Afficher le mot de passe';
+            }
+        });
+    });
+</script>
