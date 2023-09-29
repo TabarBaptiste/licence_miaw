@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD01</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/html5.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Bienvenue dans la page de Baptiste TABAR LABONNE</h1>
+        <hr class="haut">
+
+        <a href="#premier">Premier paragraphe</a><br>
+        <a href="#deuxieme">Deuxième paragraphe</a>
+
+        <div class="para" id="premier">
+            <h2>Je suis étudiant en.....</h2>
+            <h3>Premier paragraphe</h3>
+            <p>sur choix de la section,<br>
+                matières préférées, etc ... <br>
+                bla bla ...
+            </p>
+        </div>
+        <hr>
+        <div class="para" id="deuxieme">
+            <h2>Mon établissement</h2>
+            <h3>Deuxième paragraphe</h3>
+            <p>pourquoi ai-je choisi cet établissement <br>
+                ...
+                proximité du domicile, <br>
+                choix spécialité, etc ..
+            </p>
+        </div>
+        <hr>
+        <div class="para">
+            <h3>Pour me joindre</h3>
+            <p>Vous pouvez m'écrire à l'adresse : <a href="mailto:baptiste97296@gmail.com">baptiste97296@gmail.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Tableau</h1>
+        <table class="tab" border="2">
+            <tr class="trr">
+                <th class="thh" colspan="2" rowspan="2">Population</th>
+                <th class="thh" colspan="2">Moyenne</th>
+            </tr>
+            <tr class="trr">
+                <th class="thh">Hauteur</th>
+                <th class="thh">Espérence</th>
+            </tr>
+            <tr class="trr">
+                <th class="thh" rowspan="2">Sexe</th>
+                <th class="thh">Masculin</th>
+                <td class="tdd">1.78</td>
+                <td class="tdd">70</td>
+            </tr>
+            <tr class="trr">
+                <th class="thh">Féminin</th>
+                <td class="tdd">1.70</td>
+                <td class="tdd">80</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="container">
+        <h1>Formulaire d'informations</h1>
+        <form action="" method="GET">
+            <fieldset>
+                <legend>Informations personnelles :</legend>
+                <table border="0">
+                    <tr>
+                        <td>Nom de famille :</td>
+                        <td>
+                            <input type="text" name="nom">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Prénom :</td>
+                        <td>
+                            <input type="text" name="prenom">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adresse mail :</td>
+                        <td>
+                            <input type="email" name="mail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Âge :</td>
+                        <td>
+                            <input type="date" name="naissance">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>sexe</td>
+                        <td>
+                            Homme : <input type="radio" name="sexe" value="m">
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            Femme : <input type="radio" name="sexe" value="f">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pays de résidence :</td>
+                        <td>
+                            <select id="pays" name="pays" required>
+                                <optgroup label="Europe">
+                                    <option value="France">France</option>
+                                    <option value="Espagne">Espagne</option>
+                                </optgroup>
+                                <optgroup label="Amérique">
+                                    <option value="Canada">Canada</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Commentaires</td>
+                        <td>
+                            <textarea rows="3" name="commentaires" placeholder="Tapez ici vos commentaires"></textarea>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="envoyer">
+                        </td>
+                    </tr>-->
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Compétences :</legend>
+                <input type="checkbox" name="html" value="html">HTML
+                <input type="checkbox" name="css" value="css">css
+                <input type="checkbox" name="JavaScript" value="JavaScript">JavaScript
+                <input type="checkbox" name="PHP" value="PHP">PHP
+                <input type="checkbox" name="SQL" value="SQL">SQL
+                <input type="checkbox" name="SEO" value="SEO">SEO
+                <br>
+                <textarea name="com1" rows="5" cols="50" placeholder="Décrivez une expérience pro"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Validation :</legend>
+                <tr>
+                    <td>Validation :</td><br>
+                    <td>Choisissez un mot de passe :</td>
+                    <td>
+                        <input id="pw" type="password" name="motdepasse">
+                    </td>
+                </tr>
+                <br><br>
+                <input type="submit" value="Envoyer">
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <div class="container">
+        <h1>Deuxième formulaire d'information</h1>
+        <table border="0">
+            <ul>
+
+                <tr>
+                    <td>
+                        <li>Nom de famille :</li>
+                    </td>
+                    <td>
+                        <input type="text" name="nom">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li>Prénom :</li>
+                    </td>
+                    <td>
+                        <input type="text" name="prenom">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li>Date de naissance :</li>
+                    </td>
+                    <td>
+                        <input type="date" name="naissance">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li>Mot de passe :</li>
+                    </td>
+                    <td>
+                        <input type="password" name="password">
+                    </td>
+                </tr>
+
+            </ul>
+        </table>
+
+        <h2>Quel est votre niveau d'étude ?</h2>
+        <input type="radio" name="etude" value="BTS">BTS <br>
+        <input type="radio" name="etude" value="LP">LP
+
+        <h2>Cochez les cases convenable</h2>
+        <input type="radio" name="cantine" value="Externe">Externe <br>
+        <input type="radio" name="cantine" value="Demi-pensionnaire">Demi-pensionnaire
+
+        <h2>Quelle est votre LV1 ?</h2>
+        <tr>
+            <td>Langue :</td>
+            <td>
+                <select id="lv1" name="pays" required>
+                    <option selected>Anglais</option>
+                    <option>Allemand</option>
+                    <option>Espagnol</option>
+                </select>
+            </td>
+        </tr>
+
+        <div class="option">
+            <h2>Cochez toutes vos options</h2>
+            <input type="checkbox" name="etude" value="BTS">Option informatique <br>
+            <input type="checkbox" name="etude" value="LP">LV3<br>
+            <input type="checkbox" name="etude" value="LP">Autre, à préciser &#x2794;
+            <input type="text" name="etude">
+            <hr>
+        </div>
+        <div class="enbas">
+            <input type="reset" value="Effacer">
+            <input type="submit" value="Valider">
+        </div>
+    </div>
+</body>
+
+</html>

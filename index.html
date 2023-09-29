@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/toc.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/html5.png" type="image/x-icon">
+    <title>HTML Licence MIAW</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const sites = document.querySelectorAll(".site");
+
+        searchInput.addEventListener("input", function () {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            sites.forEach(function (site) {
+                const titresite = site.querySelector("h3").textContent.toLowerCase();
+                const correspondance = titresite.includes(searchTerm);
+
+                site.style.display = correspondance ? "block" : "none";
+            });
+        });
+    });
+</script>
+
+<body>
+    <h1>Travaux HTML en Licence MIAW</h1>
+    <div class="input-group">
+        <input required="" type="text" name="text" autocomplete="off" class="input" id="searchInput">
+        <label class="user-label">Chercher un site</label>
+    </div>
+    <div class="corp">
+
+        <div class="site">
+            <a href="TD01/">
+                <img src="img/html5.avif" alt="html5">
+                <h3 id="test">TD01</h3>
+            </a>
+        </div>
+        <div class="site">
+            <a href="/">
+                <img src="img/404.png" alt="404">
+                <h3>Rien pour l'instant</h3>
+            </a>
+        </div>
+        <div class="site">
+            <a href="/">
+                <img src="img/404.png" alt="404">
+                <h3>Rien pour l'instant</h3>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
