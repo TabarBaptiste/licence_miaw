@@ -48,7 +48,7 @@ a span {
 }
 
 a:hover span {
-    display: block !important;
+    display: block;
     top: 29%;
     position: absolute;
     border-top: 1px solid black;
