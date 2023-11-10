@@ -1,0 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    color: #99b92c;
+    font-size: 4em;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #cccccc;
+    background: white;
+    border-bottom: 2px dotted #ccc;
+    margin: 0;
+    padding: 0.8em;
+}
+
+.main-container {
+    max-width: 600px;
+    margin: 0 auto;
+    border: solid 10px green;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.main -container * {
+    padding: 10px;
+    background: #aaa;
+    border: dashed 5px #000;
+}
+
+.main -container *+* {
+    margin-top: 20px;
+}
+
+.main -header {
+    height: 50px;
+    background: #aaa;
+    border-color: red;
+}
+
+.main -content {
+    min-height: 1000px;
+}
+
+.main -header {
+    position: sticky;
+    top: 0;
+}
