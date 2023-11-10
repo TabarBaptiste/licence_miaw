@@ -30,10 +30,10 @@ ul {
 }
 
 li {
-    background-color: #71C9CE;
+    background-color: #8cd968;
     padding: 10px;
     border-radius: 10px 10px 0 0;
-    border: 1.5px solid black;
+    border: 1.5px solid #806c40;
     font-size: 14px;
 }
 
@@ -49,25 +49,33 @@ a span {
 
 a:hover span {
     display: block;
-    top: 29%;
+    top: 28%;
     position: absolute;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    background-color: rgb(140, 217, 104, 0.6);
+    border-radius: 10px;
     padding: 1%;
     transition: 0.5s;
+    
+    /*top: 29%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;*/
 }
 
 .content {
     padding: 1%;
-    border: 2px dashed #A6E3E9;
-    background-color: #E3FDFD;
+    border: 2px dashed #406480;
+    background-color: #daeacc;
     border-radius: 0 0 10px 10px;
     width: 100%;
 }
 
 li:nth-last-child(5),
 li:nth-last-child(6) {
-    background-color: #e3fdfd;
+    background-color: #daeacc;
+}
+
+li:nth-last-child(6) {
+    border: 1.5px solid #406480;
 }
 
 .separer {
@@ -79,13 +87,18 @@ li:nth-last-child(6) {
 .rightbox1 {
     border: 1px solid black;
     margin: 3%;
-    padding: 5%;
+    padding: 2%;
     border-radius: 10px;
+}
+.rightbox1 p {
+    padding-bottom: 2%;
+    margin: 0;
 }
 
 img {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 /* Le deuxième truc */
@@ -98,9 +111,12 @@ img {
 }
 
 .header {
-    background-color: #edfdcc;
+    /* background-color: #edfdcc; */
     margin: 0;
-    border-radius: 10px;
+    border-radius: 10px 5px 0 0;
+    background-image: url(image/header_a.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container h1 {
@@ -111,7 +127,7 @@ img {
 
 .container p {
     text-indent: 10%;
-    padding-bottom: 4%;
+    padding-bottom: 2%;
     margin: 0;
 }
 
@@ -128,7 +144,7 @@ img {
 }
 
 #content {
-    margin: 5%;
+    margin: 1%;
     width: 100%;
 }
 
@@ -184,6 +200,10 @@ img {
     a:hover span {
         top: 25%;
         position: absolute;
+    }
+
+    .rightbox1 {
+        padding-bottom: 12%;
     }
 }
 
