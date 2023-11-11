@@ -1,0 +1,74 @@
+.header_title {
+    background-image: url(img/headerb.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2%;
+}
+
+.pagetitle {
+    color: rgb(51, 204, 0);
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 55%;
+}
+
+.pagedescription {
+    margin-left: 60%;
+    color: rgb(0, 102, 0);
+}
+
+#header {
+    text-align: center;
+    /* margin: 1%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+a {
+    margin: 1%;
+    color: rgb(0, 204, 0) !important;
+}
+
+.haut {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 1%;
+}
+
+#rightarea {
+    order: 2;
+    margin-right: 1%;
+}
+
+h2 {
+    color: #33cc00;
+}
+
+.leftnav {
+    order: 1;
+    margin-right: 1%;
+    border-right: 1px solid black;
+    padding-right: 1%;
+    width: 50%;
+}
+
+.leftnav a {
+    text-decoration: none !important;
+}
+.leftnav a:hover {
+    text-decoration: underline !important;
+}
+
+.leftnav p {
+    margin-bottom: 10%;
+}
+
+.news_date {
+    color: rgb(129, 129, 129);
+}
+
+#boxR {
+    order: 3;
+}
