@@ -19,6 +19,7 @@ body {
 li {
     background-color: rgb(51, 181, 229);
     list-style-type: none;
+    
     margin-bottom: 3%;
     padding: 2%;
     border-radius: 5px;
@@ -49,10 +50,15 @@ p {
 @media only screen and (max-width: 900px) {
     .col-s-12 {
         min-width: 100%;
-        margin-top: 10px; /* Ajoute une marge pour l'espace entre les colonnes */
+        margin-top: 10px;
+        /* Ajoute une marge pour l'espace entre les colonnes */
     }
+
     .col-s-3 {
         min-width: 50%;
+    }
+    ul {
+        padding-left: 0 !important;
     }
 }
 
@@ -60,10 +66,113 @@ p {
     .col-6 {
         min-width: 100%;
     }
+
     .col-s-3 {
         min-width: 100%;
     }
+
     ul {
         padding-left: 0 !important;
+    }
+}
+
+.loader {
+    content: "";
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF3D00;
+    inset: 0;
+    margin: auto;
+    animation: mvX 0.6s, mvY 0.3s;
+    animation-timing-function: cubic-bezier(.5, -300, .5, 300);
+    animation-iteration-count: infinite;
+}
+
+@keyframes mvX {
+    100% {
+        left: 0.85px
+    }
+}
+
+@keyframes mvY {
+    100% {
+        top: 0.5px
+    }
+}
+.loader2 {
+    content: "";
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0008ff;
+    inset: 0;
+    margin: auto;
+    animation: mvvX 0.7s, mvvY 0.4s;
+    animation-timing-function: cubic-bezier(.5, -300, .5, 300);
+    animation-iteration-count: infinite;
+}
+
+@keyframes mvvX {
+    100% {
+        right: 0.85px
+    }
+}
+
+@keyframes mvvY {
+    100% {
+        bottom: 0.5px
+    }
+}
+.loader3 {
+    content: "";
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #11ff00;
+    inset: 0;
+    margin: auto;
+    animation: mvvvX 0.8s, mvvvY 0.5s;
+    animation-timing-function: cubic-bezier(.5, -300, .5, 300);
+    animation-iteration-count: infinite;
+}
+
+@keyframes mvvvX {
+    100% {
+        right: 0.85px
+    }
+}
+
+@keyframes mvvvY {
+    100% {
+        bottom: 0.5px
+    }
+}
+.loader4 {
+    content: "";
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #000000;
+    inset: 0;
+    margin: auto;
+    animation: mvvvvX 0.9s, mvvvvY 0.6s;
+    animation-timing-function: cubic-bezier(.5, -300, .5, 300);
+    animation-iteration-count: infinite;
+}
+
+@keyframes mvvvvX {
+    100% {
+        right: 0.85px
+    }
+}
+
+@keyframes mvvvvY {
+    100% {
+        bottom: 0.5px
     }
 }
