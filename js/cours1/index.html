@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'HEURE</title>
+</head>
+
+<body>
+    <p id="heure"></p>
+
+</body>
+
+</html>
+<script>
+    function afficherHeure() {
+        let date = new Date(); // Obtenir l'heure actuelle
+        let heures = date.getHours();
+        let minutes = date.getMinutes();
+        let secondes = date.getSeconds();
+
+        // Ajout du zéro devant les nombres < 10 pour un affichage plus propre
+        heures = heures < 10 ? '0' + heures : heures;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        secondes = secondes < 10 ? '0' + secondes : secondes;
+
+        let heureComplete = heures + ":" + minutes + ":" + secondes;
+
+        document.getElementById('heure').innerText = heureComplete;
+    }
+
+    // Mettre à jour l'heure chaque seconde
+    setInterval(afficherHeure, 1000);
+
+</script>
