@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="morpion">
+        <div class="row">
+            <div class="cell" data-cell="0"></div>
+            <div class="cell" data-cell="1"></div>
+            <div class="cell" data-cell="2"></div>
+        </div>
+        <div class="row">
+            <div class="cell" data-cell="3"></div>
+            <div class="cell" data-cell="4"></div>
+            <div class="cell" data-cell="5"></div>
+        </div>
+        <div class="row">
+            <div class="cell" data-cell="6"></div>
+            <div class="cell" data-cell="7"></div>
+            <div class="cell" data-cell="8"></div>
+        </div>
+    </div>
+    <p id="resultat"></p>
+
+</body>
+
+</html>
+<style>
+    .cell {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        display: inline-block;
+        text-align: center;
+        line-height: 100px;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .row:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+</style>
+<script>
+    const cells = document.querySelectorAll('.cell');
+    const resultat = document.getElementById('resultat');
+    let tourJoueur = 'X';
+    let jeuEnCours = true;
+    const combinaisonsGagnantes = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    cells.forEach(cell => {
+        cell.addEventListener('click', clicCase, { once: true });
+    });
+
+    function clicCase(e) {
+        const cellule = e.target;
+        const index = cellule.dataset.cell;
+
+        placerSymbole(cellule, index);
+        verifierGagnant();
+        changerTour();
+    }
+
+    function placerSymbole(cellule, index) {
+        cellule.textContent = tourJoueur;
+    }
+
+    function changerTour() {
+        tourJoueur = tourJoueur === 'X' ? 'O' : 'X';
+    }
+
+    function verifierGagnant() {
+        const gagnant = combinaisonsGagnantes.some(combinaison => {
+            return combinaison.every(index => {
+                return cells[index].textContent === tourJoueur;
+            });
+        });
+
+        if (gagnant) {
+            resultat.textContent = `Le joueur ${tourJoueur} a gagné !`;
+            jeuEnCours = false;
+        } else if (estMatchNul()) {
+            resultat.textContent = "Match nul !";
+            jeuEnCours = false;
+        }
+    }
+
+    function estMatchNul() {
+        return [...cells].every(cell => {
+            return cell.textContent === 'X' || cell.textContent === 'O';
+        });
+    }
+
+</script>

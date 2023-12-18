@@ -1,0 +1,25 @@
+@startuml f
+class Ouvrage {
+    - idOuvrage : int
+    - titre : string
+    - auteur : string
+    - editeur : string
+    - motsCles : set<string>
+}
+
+class Exemplaire {
+    - idExemplaire : int
+    - positionRayonnage : string
+    - dateAchat : date
+}
+
+class Emprunteur {
+    - idEmprunteur : int
+    - nom : string
+    - adresse : string
+}
+
+Médiathèque "1" -- "1..*" Ouvrage : contient
+Ouvrage "1" -- "1..*" Exemplaire : a
+Exemplaire "0..1" -- "0..1" Emprunteur : peut être emprunté par
+@enduml

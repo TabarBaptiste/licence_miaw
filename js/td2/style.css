@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Couleur de fond */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 20px; /* Espacement intérieur */
+}
+
+iframe {
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    margin: 20px 0; /* Marge en haut et en bas */
+    transition: transform 0.3s ease-in-out; /* Transition pour l'effet de survol */
+}
+
+iframe:hover {
+    transform: scale(1.001); /* Effet de survol avec agrandissement */
+}
+
+h1 {
+    font-family: 'Arial', sans-serif; /* Police d'écriture */
+    text-align: center; /* Centrage du texte */
+    color: #333; /* Couleur du texte */
+}

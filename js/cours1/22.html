@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Undefined et null sont égaux en valeur mais de type différent:</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        // Utilisation de typeof pour déterminer le type
+        document.getElementById("demo1").innerHTML =
+            typeof undefined + "<br>" +
+            typeof null + "<br><br>" +
+            (null === undefined) + "<br>" +
+            (null == undefined);
+
+        var car = "";
+        document.getElementById("demo2").innerHTML =
+            "La valeur est : " +
+            car + "<br>" +
+            "Le type est : " + typeof car;
+
+        // Création d'un objet personne
+        var personne = { Prenom: "John", Nom: "Dia", age: 50, colorYeux: "blue" };
+
+        // Affichage des propriétés de l'objet
+        document.getElementById("demo3").innerHTML =
+            "Prenom: " + personne.Prenom + "<br>" +
+            "Nom: " + personne.Nom + "<br>" +
+            "Age: " + personne.age + "<br>" +
+            "Couleur des yeux: " + personne.colorYeux;
+
+        // Affichage des types de différentes structures de données
+        document.getElementById("demo4").innerHTML =
+            typeof { prenom: 'John', age: 34 } + "<br>" +
+            typeof [1, 2, 3, 4] + "<br>" +
+            typeof null + "<br>" +
+            typeof function myFunc() { };
+
+        // Affichage des propriétés de l'objet avec une boucle
+        for (var i in personne) {
+            document.write(i + " = " + personne[i] + " - ");
+        }
+    </script>
+</body>
+
+</html>

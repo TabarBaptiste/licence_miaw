@@ -1,0 +1,44 @@
+@startuml nom
+class Soldat {
+    - idSoldat : int
+    - nom : string
+    - prenom : string
+    - dateNaissance : date
+    - dateDeces : date
+    - blessures : set<Blessure>
+    - grades : set<Grade>
+    - unitesRattachement : set<Unite>
+}
+
+class Battle {
+    - idBattle : int
+    - lieu : string
+    - dateDebut : date
+    - dateFin : date
+}
+
+class Blessure {
+    - idBlessure : int
+    - type : string
+    - date : date
+    - battle : Battle
+}
+
+class Grade {
+    - idGrade : int
+    - grade : string
+    - date : date
+}
+
+class Unite {
+    - idUnite : int
+    - nom : string
+    - dateDebut : date
+    - dateFin : date
+}
+
+Soldat "1" -- "0..*" Blessure : a des
+Soldat "1" -- "0..*" Grade : a obtenu
+Soldat "1" -- "0..*" Unite : est rattaché à
+Blessure "1" -- "1" Battle : a lieu lors de
+@enduml

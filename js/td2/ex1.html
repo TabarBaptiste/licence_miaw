@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ouvrir une fenêtre popup</title>
+    <link rel="stylesheet" href="ex.css">
+    <script>
+        function OuvrirFenetre(url) {
+            var fen = window.open(url, "Fenetre_consultation", "toolbar=no,directories=no,menubar=no,status=yes");
+        }
+    </script>
+</head>
+<body>
+    <h1>Ouverture d'une fenêtre popup</h1>
+    <p>Cliquez sur le bouton pour ouvrir une fenêtre popup :</p>
+    <button onclick="OuvrirFenetre('https://www.example.com')">Ouvrir la fenêtre popup</button>
+</body>
+</html>

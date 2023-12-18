@@ -1,0 +1,30 @@
+@startuml pu
+class Chasseur {
+    - idChasseur : int
+    - pseudo : string
+}
+
+class Chasse {
+    - idChasse : int
+    - dateChasse : date
+    - lieu : string
+}
+
+class EspecePoisson {
+    - idEspece : int
+    - nomEspece : string
+    - niveauTir : string
+    - poidsMoyen : float
+    - nombrePrises : int
+    - nombrePoints : int
+}
+
+class Prise {
+    - idPrise : int
+    - nombrePoissons : int
+}
+
+Chasseur "0..*" -- "0..*" Chasse : effectue
+Chasse "1" -- "0..*" Prise : comporte
+Prise "1" -- "1" EspecePoisson : concerne
+@enduml

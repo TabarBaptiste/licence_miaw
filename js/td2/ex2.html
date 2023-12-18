@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Évaluation d'expression mathématique</title>
+    <link rel="stylesheet" href="ex.css">
+    <script>
+        function conversion() {
+            document.formulaire.converti.value = eval(document.formulaire.saisie.value);
+        }
+    </script>
+</head>
+<body>
+    <h1>Évaluation d'expression mathématique</h1>
+    <form name="formulaire">
+        <input type="text" name="saisie" placeholder="Entrez une expression mathématique">
+        <input type="button" value="Évaluation..." onclick="conversion()">
+        <br>
+        <input type="text" name="converti" placeholder="Résultat de l'évaluation" readonly>
+    </form>
+</body>
+</html>

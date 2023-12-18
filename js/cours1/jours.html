@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script language="JavaScript">
+        var dt = new Date();
+        var jour = dt.getDay();
+        var numero = dt.getDate();
+        var mois = dt.getMonth();
+        var tab_jour = new Array("Dimanche", "Lundi", "Mardi",
+            "Mercredi", "Jeudi", "Vendredi", "Samedi");
+        var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai",
+            "Juin", "Juillet", "Août", "Septembre",
+            "Octobre", "Novembre", "Décembre");
+        document.write("Nous sommes le " + tab_jour[jour] + " " + numero + " " + tab_mois[mois]);
+    </script>
+    <script language="JavaScript">
+        var Les4saisons = new Array("printemps", "été",
+            "automne", "hiver");
+        document.write("<br>Voici les 4 saisons : <ul>");
+        for (var i = 0; i < Les4saisons.length; i++) {
+            document.write("<li>" + Les4saisons[i] + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+</body>
+
+</html>

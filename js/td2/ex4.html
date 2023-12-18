@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Affichage de l'heure et de la date</title>
+    <link rel="stylesheet" href="ex.css">
+    <script>
+        function quelle_heure() {
+            var maintenant = new Date();
+            var jour = maintenant.getDate();
+            var mois = maintenant.getMonth() + 1;
+            var annee = maintenant.getFullYear();
+            var heures = maintenant.getHours();
+            var minutes = maintenant.getMinutes();
+            var secondes = maintenant.getSeconds();
+
+            // Ajouter un zéro devant les chiffres < 10
+            jour = (jour < 10) ? "0" + jour : jour;
+            mois = (mois < 10) ? "0" + mois : mois;
+            heures = (heures < 10) ? "0" + heures : heures;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            secondes = (secondes < 10) ? "0" + secondes : secondes;
+
+            var heureActuelle = heures + ":" + minutes + ":" + secondes;
+            var dateActuelle = jour + "/" + mois + "/" + annee;
+
+            document.getElementById('dateheure').innerHTML = "Date : " + dateActuelle + "<br>Heure : " + heureActuelle;
+
+            // Rafraîchir l'heure toutes les secondes
+            setTimeout(quelle_heure, 1000);
+        }
+
+        window.onload = quelle_heure; // Pour lancer l'heure automatiquement au chargement de la page
+    </script>
+</head>
+<body>
+    <h1>Affichage de l'heure et de la date</h1>
+    <div id="dateheure"></div>
+</body>
+</html>

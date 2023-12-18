@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation de formulaire avec case à cocher</title>
+    <link rel="stylesheet" href="ex.css">
+    <script>
+        function verifierCase() {
+            var checkBox = document.getElementById("condition");
+            var submitButton = document.getElementById("submitBtn");
+
+            if (checkBox.checked == true) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Validation de formulaire avec case à cocher</h1>
+    <form>
+        <label for="condition">Veuillez cocher cette case pour valider :</label>
+        <input type="checkbox" id="condition" onchange="verifierCase()">
+        <br>
+        <input type="submit" id="submitBtn" value="Valider" disabled>
+    </form>
+</body>
+</html>

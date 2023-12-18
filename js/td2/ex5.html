@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Changement de couleur de fond</title>
+    <link rel="stylesheet" href="ex.css">
+    <script>
+        function changerCouleurRadio() {
+            var couleur = document.querySelector('input[name="couleur"]:checked').value;
+            document.body.style.backgroundColor = couleur;
+        }
+
+        function changerCouleurListe() {
+            var selectElement = document.getElementById('selectCouleur');
+            var couleur = selectElement.value;
+            document.body.style.backgroundColor = couleur;
+        }
+    </script>
+</head>
+<body style="background-color: red;">
+    <h1>Changement de couleur de fond</h1>
+    <form name="formulaire">
+        <input type="radio" name="couleur" value="red" onchange="changerCouleurRadio()" checked> Rouge
+        <input type="radio" name="couleur" value="green" onchange="changerCouleurRadio()"> Vert
+        <input type="radio" name="couleur" value="blue" onchange="changerCouleurRadio()"> Bleu
+        <input type="radio" name="couleur" value="yellow" onchange="changerCouleurRadio()"> Jaune
+    </form>
+
+    <form name="formulaire2">
+        <select id="selectCouleur" onchange="changerCouleurListe()">
+            <option value="red">Rouge</option>
+            <option value="green">Vert</option>
+            <option value="blue">Bleu</option>
+            <option value="yellow">Jaune</option>
+        </select>
+    </form>
+</body>
+</html>

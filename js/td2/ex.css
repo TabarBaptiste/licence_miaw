@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Largeur de la scrollbar */
+    background-color: white;
+    /* Couleur de fond de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(168, 168, 168);
+    /* Couleur de la scrollbar */
+    border-radius: 5px;
+    /* Bord arrondi de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: white;
+}
