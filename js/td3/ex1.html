@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcul de Prix</title>
+    <script>
+        function calculerPrix() {
+            let quantite = parseFloat(document.getElementById('zoneQuantite').value);
+            let prixUnitaire = parseFloat(document.getElementById('zonePrixUnitaire').value);
+
+            let prixHT = prixUnitaire * quantite;
+            let prixTVAIncluse = prixHT * 1.2;
+
+            prixHT = Math.round(prixHT * 100) / 100;
+            prixTVAIncluse = Math.round(prixTVAIncluse * 100) / 100;
+
+            document.getElementById('zoneResultatPrixHT').value = prixHT;
+            document.getElementById('zoneResultatPrixTVA').value = prixTVAIncluse;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcul de Prix</h1>
+    <form>
+        <label for="zoneQuantite">Quantité :</label>
+        <input type="number" id="zoneQuantite" step="any" required><br><br>
+
+        <label for="zonePrixUnitaire">Prix unitaire :</label>
+        <input type="number" id="zonePrixUnitaire" step="any" required><br><br>
+
+        <button type="button" onclick="calculerPrix()">Calculer</button>
+    </form>
+
+    <h2>Résultats :</h2>
+    <label for="zoneResultatPrixHT">Prix hors TVA :</label>
+    <input type="text" id="zoneResultatPrixHT" readonly><br><br>
+
+    <label for="zoneResultatPrixTVA">Prix TVA incluse :</label>
+    <input type="text" id="zoneResultatPrixTVA" readonly><br><br>
+</body>
+</html>

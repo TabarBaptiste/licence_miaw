@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Convertisseur Francs Français - Euro</title>
+    <script>
+        function convertir() {
+            let montant = parseFloat(document.getElementById('montant').value);
+            let conversion = document.getElementById('conversion').value;
+
+            const tauxConversion = 6.55957;
+
+            if (conversion === 'ffToEuro') {
+                let montantEnEuro = montant / tauxConversion;
+                montantEnEuro = Math.round(montantEnEuro * 100) / 100;
+                document.getElementById('resultat').innerHTML = montant + ' FF équivaut à ' + montantEnEuro.toFixed(2) + ' €';
+            } else if (conversion === 'euroToFF') {
+                let montantEnFF = montant * tauxConversion;
+                montantEnFF = Math.round(montantEnFF * 100) / 100;
+                document.getElementById('resultat').innerHTML = montant + ' € équivaut à ' + montantEnFF.toFixed(2) + ' FF';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Convertisseur Francs Français - Euro</h1>
+    <label for="montant">Montant :</label>
+    <input type="number" id="montant" step="any" required><br><br>
+
+    <label for="conversion">Choisir la conversion :</label>
+    <select id="conversion">
+        <option value="euroToFF">€ vers FF</option>
+        <option value="ffToEuro">FF vers €</option>
+    </select><br><br>
+
+    <button type="button" onclick="convertir()">Convertir</button><br><br>
+
+    <p id="resultat"></p>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fenêtre Pop-up</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Exemple de Fenêtre Pop-up</h1>
+    <label for="montant">Login :</label>
+    <input type="text">
+    <a href="#" id="lienLogin"><input type="submit" value="Aide pour le mot de login"></a><br>
+    <label for="montant">Mot de passe :</label>
+    <input type="text">
+    <a href="#" id="lienMotDePasse"><input type="submit" value="Aide pour le mot de passe"></a>
+</body>
+
+</html>
+<script>
+    document.getElementById('lienLogin').addEventListener('click', function (event) {
+        event.preventDefault();
+        alert("Vous avez cliqué sur l'aide pour le login.\n\nVoici quelques conseils pour vous connecter.");
+    });
+
+    document.getElementById('lienMotDePasse').addEventListener('click', function (event) {
+        event.preventDefault();
+        alert("Vous avez cliqué sur l'aide pour le mot de passe.\n\nVoici quelques conseils pour votre mot de passe.");
+    });
+
+</script>

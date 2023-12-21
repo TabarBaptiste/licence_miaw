@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire avec Chronomètre</title>
+    <link rel="stylesheet" href="ex.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Questionnaire avec Chronomètre</h1>
+    <form id="quiz">
+        <div class="container">
+            <div class="timer-container">
+                <label for="timer">Temps restant :</label>
+                <input type="text" id="timer" readonly>
+            </div>
+            <div class="quest">
+                <p>Question 1: Quelle est la capitale de la France?</p>
+                <input type="radio" id="q1a" name="q1" value="paris"><label for="q1a">Paris</label><br>
+                <input type="radio" id="q1b" name="q1" value="london"><label for="q1b">Londres</label><br>
+                <input type="radio" id="q1c" name="q1" value="berlin"><label for="q1c">Berlin</label><br><br>
+            </div>
+            <div class="quest">
+                <p>Question 2: Quel est le plus grand océan du monde?</p>
+                <input type="radio" id="q2a" name="q2" value="atlantic"><label for="q2a">Atlantique</label><br>
+                <input type="radio" id="q2b" name="q2" value="pacific"><label for="q2b">Pacifique</label><br>
+                <input type="radio" id="q2c" name="q2" value="indian"><label for="q2c">Indien</label><br><br>
+            </div>
+            <div class="quest">
+                <p>Question 3: Qui a peint la Joconde?</p>
+                <input type="radio" id="q3a" name="q3" value="picasso"><label for="q3a">Picasso</label><br>
+                <input type="radio" id="q3b" name="q3" value="vangogh"><label for="q3b">Van Gogh</label><br>
+                <input type="radio" id="q3c" name="q3" value="davinci"><label for="q3c">Da Vinci</label><br><br>
+            </div>
+            <button type="button" onclick="verifierReponses()">Vérifier</button>
+            <button type="button" onclick="recommencer()">Recommencer</button><br><br>
+
+            <textarea id="resultat" rows="2" cols="30" readonly></textarea>
+        </div>
+    </form>
+</body>
+
+</html>
+<script>
+    let seconds = 10;
+
+    function startTimer() {
+        timer = setInterval(() => {
+            document.getElementById('timer').value = seconds;
+            if (seconds === 0) {
+                clearInterval(timer);
+                verifierReponses();
+                return;
+            }
+            seconds--;
+        }, 1000);
+    }
+
+    function verifierReponses() {
+        let nombreReponsesCorrectes = 0;
+
+        // Vérifier chaque question pour trouver les réponses correctes
+        if (document.getElementById('q1a').checked) {
+            nombreReponsesCorrectes++;
+        }
+        if (document.getElementById('q2b').checked) {
+            nombreReponsesCorrectes++;
+        }
+        if (document.getElementById('q3c').checked) {
+            nombreReponsesCorrectes++;
+        }
+
+        // Afficher le résultat dans une alerte
+        alert('Temps écoulé! Nombre de réponses correctes : ' + nombreReponsesCorrectes);
+
+        // Réinitialiser les sélections des boutons radio
+        document.getElementById('quiz').reset();
+        seconds = 10;
+        document.getElementById('timer').value = '10';
+    }
+
+    window.onload = startTimer;
+
+</script>

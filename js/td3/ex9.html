@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interaction avec le texte au survol et au clic sur le lien</title>
+    <script>
+        let textAdded = false;
+
+        function ajouterTexte() {
+            let textarea = document.getElementById('myTextarea');
+            if (!textAdded) {
+                textarea.value = 'Texte ajouté au survol du lien.';
+            }
+        }
+
+        function conserverTexte() {
+            let textarea = document.getElementById('myTextarea');
+            if (!textAdded) {
+                textarea.value = 'Texte ajouté au survol du lien.';
+                textAdded = true;
+            }
+        }
+
+        function effacerTexte() {
+            if (!textAdded) {
+                let textarea = document.getElementById('myTextarea');
+                textarea.value = '';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Interaction avec le texte au survol et au clic sur le lien</h1>
+    <p>
+        Survolez le lien pour afficher le texte dans le textarea, puis cliquez pour le conserver :
+        <a href="#" onmouseover="ajouterTexte()" onmouseout="effacerTexte()" onclick="conserverTexte()">Survolez et
+            cliquez ici</a>
+    </p>
+    <textarea id="myTextarea" rows="5" cols="40"></textarea>
+</body>
+
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter du texte au passage de la souris</title>
+    <script>
+        function ajouterTexte() {
+            let textarea = document.getElementById('myTextarea');
+            textarea.value = 'Texte ajouté au passage de la souris.';
+        }
+
+        function effacerTexte() {
+            let textarea = document.getElementById('myTextarea');
+            textarea.value = '';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ajouter du texte au passage de la souris</h1>
+    <p>
+        Survolez le lien ci-dessous pour ajouter du texte dans le textarea :
+        <a href="#" onmouseover="ajouterTexte()" onmouseout="effacerTexte()">Survolez ici</a>
+    </p>
+    <textarea id="myTextarea" rows="5" cols="40"></textarea>
+</body>
+
+</html>-->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Limitation du nombre de cases cochées</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Limitation du nombre de cases cochées à 3</h1>
+    <form id="checkboxForm">
+        <label><input type="checkbox" name="option" value="option1"> Option 1</label><br>
+        <label><input type="checkbox" name="option" value="option2"> Option 2</label><br>
+        <label><input type="checkbox" name="option" value="option3"> Option 3</label><br>
+        <label><input type="checkbox" name="option" value="option4"> Option 4</label><br>
+        <label><input type="checkbox" name="option" value="option5"> Option 5</label><br>
+        <button type="button" onclick="verifierCasesCoches()">Valider</button>
+    </form>
+</body>
+
+</html>
+<script>
+    function verifierCasesCoches() {
+        let checkboxes = document.getElementsByTagName('input');
+        let checkedCount = 0;
+
+        // Compter le nombre de cases cochées
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].type === 'checkbox' && checkboxes[i].checked) {
+                checkedCount++;
+            }
+        }
+
+        // Vérifier si le nombre de cases cochées est égal à 3
+        if (checkedCount === 3) {
+            alert('Vous avez choisi 3 options.');
+        } else {
+            alert('Veuillez cocher exactement 3 options.');
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transformation en majuscules avec compteur de caractères</title>
+    <script>
+        function compter() {
+            let textArea = document.getElementById('zoneTexte');
+            let counter = document.getElementById('compteur');
+            let text = textArea.value.toUpperCase(); // Convertit en majuscules
+
+            if (text.length > 150) {
+                textArea.value = text.substring(0, 150); // Limite à 150 caractères
+                counter.textContent = '150/150'; // Affiche la limite maximale atteinte
+            } else {
+                textArea.value = text;
+                counter.textContent = text.length + '/150'; // Affiche le nombre de caractères saisis
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Formulaire de Transformation en majuscules avec compteur de caractères</h1>
+    <form>
+        <label for="zoneTexte">Entrez du texte (max. 150 caractères) :</label><br>
+        <textarea id="zoneTexte" onkeyup="compter()" maxlength="150"></textarea><br>
+        <span id="compteur">0/150</span> <!-- Affichage du compteur de caractères -->
+    </form>
+</body>
+
+</html>

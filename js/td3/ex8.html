@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sélectionner tout le texte dans un textarea</title>
+    <script>
+        function selectText() {
+            let textarea = document.getElementById('myTextarea');
+            textarea.select(); // Sélectionne tout le texte dans le textarea
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Sélectionner tout le texte dans un textarea</h1>
+    <form>
+        <label for="myTextarea">Zone de texte :</label><br>
+        <textarea id="myTextarea" rows="5" cols="40"></textarea><br><br>
+        <button type="button" onclick="selectText()">Sélectionner tout le texte</button>
+    </form>
+</body>
+
+</html>
