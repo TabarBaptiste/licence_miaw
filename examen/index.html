@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen HTML CSS JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Recherche</legend>
+        <table>
+            <tr>
+                <td><input type="search" name="champRecherche" id="champRecherche"></td>
+                <td><button type="button">Recherche</button></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Informations personnelles :</legend>
+        <form action="" method="post" class="monForm" name="monForm1">
+            <table>
+                <tr>
+                    <th><label for="">Prénom <span>*</span></label></th>
+                    <td>
+                        <input type="text" name="prenom" placeholder="Prénom" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="">Nom de famille <span>*</span></label></th>
+                    <td>
+                        <input type="text" name="nom" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="sexe">Sexe</label></th>
+                    <td>
+                        <input type="radio" name="sexe" id="homme" value="homme" checked><label
+                            for="homme">Homme</label>
+                        <input type="radio" name="sexe" id="femme" value="femme"><label for="femme">Femme</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="">Date de livraison</label></th>
+                    <td><input type="date" name="livraison" id="livraison"></td>
+                </tr>
+                <tr>
+                    <th><label for="">Couleur de papier</label></th>
+                    <td><input type="color" name="papier" id="papier" value="#000000">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="">Date de naissance</label></th>
+                    <td><input type="number" name="naissanceJour" id="naissanceJour" minlength="1" maxlength="31"> /
+                        <input type="number" name="naissanceMois" id="naissanceMois" minlength="1" maxlength="12"> /
+                        <input type="number" name="naissanceAnne" id="naissanceAnne" minlength="1900">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="">Adresse</label></th>
+                    <td><input type="text" name="adresse"></td>
+                </tr>
+                <tr>
+                    <th><label for="">Code postal <span>*</span></label></th>
+                    <td><input type="text" pattern="[A-Za-z0-9]{6}" maxlength="6" name="postale" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="">Ville</label></th>
+                    <td><input type="text" name="ville"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="">Pays</label>
+                    </th>
+                    <td><select name="pays" id="pays">
+                            <optgroup label="Amérique">
+                                <option value="Canada">Canada</option>
+                                <option value="Etats-Unis">Etats-Unis</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="Belgique">Belgique</option>
+                                <option value="France">France</option>
+                            </optgroup>
+                        </select></td>
+                </tr>
+            </table>
+            <input type="submit" value="Envoyer">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Compte :</legend>
+        <form action="" method="post" class="monForm" name="monForm2">
+            <table>
+                <tr>
+                    <th><label for="identifiant">Identifiant <span>*</span></label></th>
+                    <td><input type="text" id="identifiant" name="identifiant" required></td>
+                </tr>
+                <tr>
+                    <th><label for="">Mot de passe <span>*</span></label></th>
+                    <td><input type="password" name="password" id="password"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{12}$"
+                            title="Le mot de passe doit contenir au moins 12 caractères, avec au moins une majuscule et une minuscule"
+                            required>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="site">Addresse du site <span>*</span></label></th>
+                    <td><input type="text" required value="https://" name="site" id="site"></td>
+                </tr>
+                <tr>
+                    <th><label for="email">Adresse <span>*</span></label></th>
+                    <td><input type="email" name="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <th><label for="nom">Question secrète</label></th>
+                    <td><input list="secret" id="" name="secret" /></td>
+                    <datalist id="secret">
+                        <option value="Nom de votre mère"></option>
+                        <option value="Nom de votre père"></option>
+                        <option value="Nom de votre chien"></option>
+                        <option value="Nom de votre lapin"></option>
+                    </datalist>
+                </tr>
+                <tr>
+                    <th><label for="">Réponse :</label></th>
+                    <td><input type="text" name="reponse" id="reponse"></td>
+                </tr>
+                <tr>
+                    <td>Vacances</td>
+                    <td><select name="vacances" id="vacances">
+                            <option value="Toussaint">Toussaint</option>
+                            <option value="Toussaint">Toussaint</option>
+                            <option value="Noël">Noël</option>
+                            <option value="Hiver">Hiver</option>
+                        </select></td>
+                </tr>
+            </table>
+            <input type="submit" value="Envoyer">
+        </form>
+    </fieldset>
+</body>
+
+</html>

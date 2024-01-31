@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="formulaire">
+        <select name="gauche" multiple>
+            <option value="tache1">Tâche 1</option>
+            <option value="tache2">Tâche 2</option>
+            <option value="tache3">Tâche 3</option>
+            <!-- Autres tâches à gauche -->
+        </select>
+
+        <button type="button" id="ajouter">Ajouter</button>
+        <button type="button" id="enlever">Enlever</button>
+
+        <select name="droite" multiple>
+            <!-- Tâches déplacées à droite -->
+        </select>
+
+        <button type="button" id="supprimer">Supprimer</button>
+        <button type="button" id="supprimerTout">Supprimer Tout</button>
+    </form>
+
+</body>
+
+</html>
+<script>
+    // Fonction pour déplacer les tâches de gauche à droite
+    document.getElementById('ajouter').addEventListener('click', function () {
+        var index_g = document.formulaire.gauche.selectedIndex;
+        var tache = document.formulaire.gauche.options[index_g];
+
+        if (tache) {
+            document.formulaire.droite.appendChild(tache);
+        }
+    });
+
+    // Fonction pour déplacer les tâches de droite à gauche
+    document.getElementById('enlever').addEventListener('click', function () {
+        var index_d = document.formulaire.droite.selectedIndex;
+        var tache = document.formulaire.droite.options[index_d];
+
+        if (tache) {
+            document.formulaire.gauche.appendChild(tache);
+        }
+    });
+
+    // Fonction pour supprimer une tâche sélectionnée dans l'une des zones
+    document.getElementById('supprimer').addEventListener('click', function () {
+        var index_d = document.formulaire.droite.selectedIndex;
+        var index_g = document.formulaire.gauche.selectedIndex;
+
+        if (index_d !== -1) {
+            document.formulaire.droite.remove(index_d);
+        } else if (index_g !== -1) {
+            document.formulaire.gauche.remove(index_g);
+        }
+    });
+
+    // Fonction pour supprimer toutes les tâches sans les sélectionnées
+    document.getElementById('supprimerTout').addEventListener('click', function () {
+        var listeGauche = document.formulaire.gauche;
+        var listeDroite = document.formulaire.droite;
+
+        for (var i = listeGauche.options.length - 1; i >= 0; i--) {
+            if (!listeGauche.options[i].selected) {
+                listeGauche.remove(i);
+            }
+        }
+
+        for (var j = listeDroite.options.length - 1; j >= 0; j--) {
+            if (!listeDroite.options[j].selected) {
+                listeDroite.remove(j);
+            }
+        }
+    });
+
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+
+    select {
+        width: 150px;
+        height: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    #ajouter {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #enlever {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    #supprimer,
+    #supprimerTout {
+        background-color: #f44336;
+        color: white;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+</style>

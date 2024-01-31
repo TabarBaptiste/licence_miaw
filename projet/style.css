@@ -30,7 +30,9 @@ a {
     margin: 1%;
     color: rgb(0, 204, 0) !important;
 }
-
+a:hover{
+    color: blueviolet !important;
+}
 .haut {
     display: flex;
     flex-wrap: nowrap;
@@ -74,72 +76,40 @@ h2 {
     order: 3;
 }
 
-.loader {
-    position: fixed;
-    width: 164px;
-    height: 164px;
-}
-
-.loader::before,
-.loader::after {
-    border-radius: 5px;
-    content: '';
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background-color: #000000;
-    left: 50%;
-    top: 50%;
-    animation: rotate 5s ease-in infinite;
-}
-
-.loader::after {
-    width: 20px;
-    height: 20px;
-    background-color: #FF3D00;
-    animation: rotate 5s ease-in infinite, moveY 5s ease-in infinite;
-}
-
-@keyframes moveY {
-
-    0%,
-    100% {
-        top: 10%
+/* Test de Responsivité */
+@media only screen and (max-width: 900px) {
+    #boxR {
+        order: 3;
+        display: flex;
+        align-items: center;
     }
 
-    45%,
-    55% {
-        top: 59%
+    #rightarea {
+        order: 2;
+        width: 68%;
     }
 
-    60% {
-        top: 40%
+    .leftnav {
+        order: 1;
+        width: 100%;
+        border: none;
+    }
+
+    .haut {
+        flex-wrap: wrap;
+    }
+
+    .leftnav p {
+        margin-bottom: 4%;
     }
 }
 
-@keyframes rotate {
-    0% {
-        transform: translate(-50%, -100%) rotate(0deg) scale(1, 1)
+@media only screen and (max-width: 675px) {
+    #rightarea {
+        width: 100%;
     }
 
-    25% {
-        transform: translate(-50%, 0%) rotate(180deg) scale(1, 1)
-    }
-
-    45%,
-    55% {
-        transform: translate(-50%, 100%) rotate(180deg) scale(3, 0.5)
-    }
-
-    60% {
-        transform: translate(-50%, 100%) rotate(180deg) scale(1, 1)
-    }
-
-    75% {
-        transform: translate(-50%, 0%) rotate(270deg) scale(1, 1)
-    }
-
-    100% {
-        transform: translate(-50%, -100%) rotate(360deg) scale(1, 1)
+    .haut {
+        flex-direction: column;
     }
 }

@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.saisi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 97%;
+}
+
+.identite {
+    flex: 1 1 calc(50% - 15px);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.matiere,
+.discipline,
+.inscrit,
+.projet {
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.bouton {
+    display: flex;
+}
+
+.infor {
+    border: 1.2px black solid;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#save {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.reset {
+    background-color: #f44336;
+    color: white;
+}
+
+.close {
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 80%;
+    }
+}

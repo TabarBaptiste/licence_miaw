@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Traitemet</title>
+</head>
+
+<body>
+    <form id="formulaire">
+        <div class="container">
+            <div class="saisi">
+                <div class="identite">
+                    <label for="nom">Nom :</label>
+                    <input type="text" placeholder="Votre nom" name="nom" id="nom">
+                </div>
+                <div class="identite">
+                    <label for="nom">Prénom :</label>
+                    <input type="text" placeholder="Votre prénom" name="prenom" id="prenom">
+                </div>
+                <div class="identite">
+                    <label for="nom">E-mail :</label>
+                    <input type="text" placeholder="Votre adresse e-mail" name="email" id="email">
+                </div>
+            </div>
+            <div class="matiere">
+                <p>Vous êtes en terminale S à dominante :</p>
+                Mathématique<input type="radio" name="matiere" value="math" id="matiere_math">
+                Physique-Chimie<input type="radio" name="matiere" value="physique" id="matiere_physique">
+            </div>
+            <div class="discipline">
+                Quell est votre discipline préférée ?
+                <select id="discipline" name="discipline" required>
+                    <option value="info">Informatique</option>
+                    <option value="philo">Philosophie</option>
+                    <option value="math">Mathématique</option>
+                </select>
+            </div>
+            <div class="inscrit">
+                Vous êtes inscrit en :
+                <input type="checkbox" name="premier" value="premier" id="premier">Première
+                <input type="checkbox" name="deuxieme" value="deuxieme" id="deuxieme">Deuxième
+                <input type="checkbox" name="troisieme" value="troisieme" id="troisieme">Troisième
+            </div>
+            <div class="projet">
+                <p>
+                    Cochez pour écrire le sujet de votre informatique :
+                    <input type="checkbox" name="cocher" id="cocher">
+                </p>
+                <textarea name="projet" id="projet" cols="40" rows="10"></textarea>
+            </div>
+            <div class="bouton">
+                <div class="infor">
+                    Valider ces informations
+                    <button type="button" id="save">Enregistrer</button>
+                </div>
+                <div class="infor">
+                    Recommencer la saisie
+                    <button type="button" class="reset" onclick="effacerFormulaire()">Effacer</button>
+                </div>
+                <div class="infor">
+                    Fermer la fenêtre
+                    <button type="button" class="close" onclick="fermerWindow()">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
+<script>
+    // Fonction pour traiter les informations du formulaire
+    function traiter_info() {
+        var nom = document.getElementById('nom').value;
+        var prenom = document.getElementById('prenom').value;
+        var email = document.getElementById('email').value;
+
+        var matiere;
+        if (document.getElementById('matiere_math').checked) {
+            matiere = document.getElementById('matiere_math').value;
+        } else if (document.getElementById('matiere_physique').checked) {
+            matiere = document.getElementById('matiere_physique').value;
+        }
+
+        var discipline = document.getElementById('discipline').value;
+
+        var premier = document.getElementById('premier').checked;
+        var deuxieme = document.getElementById('deuxieme').checked;
+        var troisieme = document.getElementById('troisieme').checked;
+
+        var projet = document.getElementById('projet').value;
+
+        // Ouverture de la fenêtre pour afficher les informations
+        var options = 'toolbar=no, width=300px, height=400px';
+        var w = window.open("", "Fiche_de_renseignements", options);
+        w.document.write("Votre nom : ", nom, "<br>");
+        w.document.write("Votre prénom : ", prenom, "<br>");
+        w.document.write("Votre adresse e-mail : ", email, "<br>");
+        w.document.write("Vous êtes en terminale S à dominante : ", matiere, "<br>");
+        w.document.write("Votre discipline préférée : ", discipline, "<br>");
+        w.document.write("Vous êtes inscrit en : ", premier ? "Première année" : "", deuxieme ? "Deuxième année" : "", troisieme ? "Troisième année" : "", "<br>");
+        w.document.write("Sujet de votre informatique : ", projet, "<br>");
+    }
+
+    // Récupère la case à cocher et le champ de texte
+    var checkbox = document.getElementById('cocher');
+    var textarea = document.getElementById('projet');
+
+    // Ajoute un écouteur d'événements pour la case à cocher
+    textarea.style.visibility = 'hidden';
+    checkbox.addEventListener('change', function () {
+        // Vérifie si la case est cochée ou non
+        if (checkbox.checked) {
+            // Si la case est cochée, affiche le champ de texte en modifiant la visibilité
+            textarea.style.visibility = 'visible';
+        } else {
+            // Sinon, cache le champ de texte en modifiant la visibilité
+            textarea.style.visibility = 'hidden';
+        }
+    });
+
+    function effacerFormulaire() {
+        document.getElementById("formulaire").reset();
+    }
+
+    // Fonction pour fermer la fenêtre
+    function fermerWindow() {
+        window.open()
+    }
+
+    // Écouteurs d'événements pour les boutons
+    document.getElementById('save').addEventListener('click', traiter_info);
+
+</script>

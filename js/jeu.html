@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeu de devinette</title>
+</head>
+<body>
+    <script>
+        // Insérez le code JavaScript ici
+        // Génération d'un nombre aléatoire entre 1 et 100
+        const nombreAleatoire = Math.floor(Math.random() * 100) + 1;
+        let essais = 0;
+        let trouve = false;
+
+        // Fonction pour jouer au jeu
+        function devinerLeNombre() {
+            // Demande à l'utilisateur de deviner un nombre
+            const choixUtilisateur = prompt("Devine le nombre entre 1 et 100 :");
+
+            // Vérification du choix de l'utilisateur
+            if (choixUtilisateur === null) {
+                return; // Arrête le jeu si l'utilisateur annule
+            }
+
+            const nombreChoisi = parseInt(choixUtilisateur);
+
+            if (isNaN(nombreChoisi)) {
+                alert("Veuillez entrer un nombre valide !");
+                devinerLeNombre(); // Redemander un nombre
+                return;
+            }
+
+            essais++;
+
+            if (nombreChoisi === nombreAleatoire) {
+                trouve = true;
+                alert(`Bravo ! Tu as deviné le nombre en ${essais} essais !`);
+            } else if (nombreChoisi < nombreAleatoire) {
+                alert("Le nombre est plus grand !");
+                devinerLeNombre(); // Redemander un nombre
+            } else {
+                alert("Le nombre est plus petit !");
+                devinerLeNombre(); // Redemander un nombre
+            }
+        }
+
+        // Démarrer le jeu
+        devinerLeNombre();
+    </script>
+</body>
+</html>

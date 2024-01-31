@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordonner une liste SELECT</title>
+</head>
+
+<body>
+    <form name="formulaire">
+        <select name="liste" id="maListe" multiple>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+        </select>
+        <br>
+        <button type="button" onclick="monter()">Monter</button>
+        <button type="button" onclick="descendre()">Descendre</button>
+        <br>
+        <input type="text" id="resultat" readonly>
+    </form>
+
+    <script>
+        function monter() {
+            var liste = document.getElementById('maListe');
+            var selectedOption = liste.selectedIndex;
+
+            if (selectedOption > 0) {
+                var temp = liste[selectedOption - 1].value;
+                liste[selectedOption - 1].value = liste[selectedOption].value;
+                liste[selectedOption].value = temp;
+
+                var tempText = liste[selectedOption - 1].text;
+                liste[selectedOption - 1].text = liste[selectedOption].text;
+                liste[selectedOption].text = tempText;
+
+                liste.selectedIndex = selectedOption - 1;
+            }
+
+            updateResult();
+        }
+
+        function descendre() {
+            var liste = document.getElementById('maListe');
+            var selectedOption = liste.selectedIndex;
+
+            if (selectedOption < liste.options.length - 1 && selectedOption !== -1) {
+                var temp = liste[selectedOption + 1].value;
+                liste[selectedOption + 1].value = liste[selectedOption].value;
+                liste[selectedOption].value = temp;
+
+                var tempText = liste[selectedOption + 1].text;
+                liste[selectedOption + 1].text = liste[selectedOption].text;
+                liste[selectedOption].text = tempText;
+
+                liste.selectedIndex = selectedOption + 1;
+            }
+
+            updateResult();
+        }
+
+        function updateResult() {
+            var liste = document.getElementById('maListe');
+            var resultat = document.getElementById('resultat');
+            var values = [];
+
+            for (var i = 0; i < liste.options.length; i++) {
+                values.push(liste.options[i].value);
+            }
+
+            resultat.value = values.join(', ');
+        }
+    </script>
+</body>
+
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    form {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        background-color: #3498db;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
